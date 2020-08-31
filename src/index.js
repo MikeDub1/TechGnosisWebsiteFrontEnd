@@ -6,4 +6,5 @@ let button = document.getElementById("join");
 
 button.addEventListener('click', () => {
     ReactDOM.render(<App h1="Please join us" h2="please!!!" />);
+    
 });
