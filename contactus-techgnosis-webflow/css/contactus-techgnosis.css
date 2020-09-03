@@ -1,3 +1,5 @@
+
+
 .w-layout-grid {
   display: -ms-grid;
   display: grid;
@@ -2500,10 +2502,13 @@ figcaption {
   margin-bottom: 0px;
 }
 
-.reactcontainer {
+#reactcontainer {
   width: 80%;
   height: 60%;
   margin-top: 70px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 991px) {

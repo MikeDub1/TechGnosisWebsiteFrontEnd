@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-   entry: './index.js',
+   entry: './src/index.js',
    output: {
       path: path.join(__dirname, '/bundle'),
       filename: 'index_bundle.js'
@@ -18,14 +18,14 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel-loader',
             query: {
-               presets: ['es2015', 'react']
+               presets: ['@babel/preset-env', '@babel/preset-react']
             }
          }
       ]
    },
    plugins:[
       new HtmlWebpackPlugin({
-         template: './index.html'
+         template: './contactus-techgnosis-webflow/index.html'
       })
    ]
 }

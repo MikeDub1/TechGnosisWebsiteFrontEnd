@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 
 class App extends React.Component
 {
-    render(assets){
+    render(){
         return(
             <React.StrictMode>
-                <div id="joinUsDiv">
-                    <h1>{assets.h1}</h1>
-                    <h2>{assets.h2}</h2>
+                <div id="inner_react" style={this.props.image}>
+                    <h1>{this.props.h1}</h1>
+                    <h2>{this.props.h2}</h2>
                 </div>
             </React.StrictMode>
         );
