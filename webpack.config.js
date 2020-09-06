@@ -2,7 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-   entry: './src/index.js',
+   entry: 
+   {
+      'contactus-techgnosis-webflow/index.html': './src/index.js',
+      'contactus-techgnosis-webflow/projects.html':'./src/forumLandingPage.js'
+   },
    output: {
       path: path.join(__dirname, '/bundle'),
       filename: 'index_bundle.js'
