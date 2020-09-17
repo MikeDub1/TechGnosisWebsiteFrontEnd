@@ -21,6 +21,7 @@ class NavPrev extends React.Component
                 h1 : "BlahBlahBlah",
                 h2 : "BlahBlah"
             }
+            
         }
 
         else if(src.id = "services")
