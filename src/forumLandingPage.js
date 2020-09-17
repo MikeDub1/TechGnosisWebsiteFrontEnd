@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import WhatsHotBlock from './WhatsHotBlock.js';
+import WhatsHotBlock from './WhatsHotBlock.js'
+;
 function renderShit(threads)
 {
     let reactContainer = document.createElement("div");
     let parentContainer = document.getElementById("content");
+    if(!parentContainer) return;
 
     for(let i = 0; i < threads.length; i++)
     {
@@ -33,6 +35,6 @@ let threadSampleObject3 =
     community: "GAMERZZZ"
 };
 
-threads = [threadSampleObject1, threadSampleObject2, threadSampleObject3];
+let threads = [threadSampleObject1, threadSampleObject2, threadSampleObject3];
 
 renderShit(threads);

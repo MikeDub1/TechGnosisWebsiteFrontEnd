@@ -8,7 +8,7 @@ class NavPrev extends React.Component
         this.state = {
             style: {backgroundImage: 'url(contactus-techgnosis-webflow/images/portfolio-1---wide.svg)'},
             h1: "BlahBlahBlah",
-            h2: "BlahBlah"
+            h2: "BlahBlah",
         }
     }
 
@@ -16,33 +16,48 @@ class NavPrev extends React.Component
         let src = event.srcElement;
         if(src.id == "join")
         {
-            this.state = {
+            this.setState({
                 style : {backgroundImage: 'url(contactus-techgnosis-webflow/images/portfolio-1---wide.svg)'},
                 h1 : "BlahBlahBlah",
                 h2 : "BlahBlah"
-            }
-            
+            });    
         }
 
-        else if(src.id = "services")
+        else if(src.id == "services")
         {
-            this.state = {
+            this.setState({
                 style : {backgroundImage: 'url(contactus-techgnosis-webflow/images/portfolio-2---wide.svg)'},
                 h1:"This is my 2nd button",
                 h2 : "Service information goes here!"
-            }
+            });
         }
 
-        else if(src.id = "contact-us")
+        else if(src.id == "contact-us")
         {
-            this.state = {
+            this.setState({
                 style : {backgroundImage: 'url(contactus-techgnosis-webflow/images/portfolio-3---wide.svg)'},
                 h1: "This is my 3rd button",
                 h2: "Contact us information goes here!"
-            }
+            });
         }
-        else return;
+
+        else if(src.id == "forumsButton")
+        {
+            this.setState({
+                style: {backgroundImage: 'url(contactus-techgnosis-webflow/images/portfolio-4---wide.svg)'},
+                h1: "This is my 4th button",
+                h2: "The forums page will work someday, I swear!"
+            });
+        }
+        else{
+            this.setState({
+                style: {backgroundImage: 'url(contactus-techgnosis-webflow/images/Icon-1.svg)'},
+                h1: "Find out more about our amazing start up!",
+                h2: "Meet the Founders!"
+            });
+        }
     }
+
     render(){
         return(
             <>
