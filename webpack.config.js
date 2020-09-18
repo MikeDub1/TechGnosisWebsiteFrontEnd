@@ -4,12 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
    entry: 
    {
-      'contactus-techgnosis-webflow/index.html': './src/index.js',
-      'contactus-techgnosis-webflow/projects.html':'./src/forumLandingPage.js'
+      home: './src/index.js',
+      forum: './src/projects.js'
    },
    output: {
-      path: path.join(__dirname, '/bundle'),
-      filename: 'index_bundle.js'
+      path: __dirname + '/bundle',
+      filename: '[name].bundle.js'
    },
    devServer: {
       inline: true,
@@ -27,9 +27,5 @@ module.exports = {
          }
       ]
    },
-   plugins:[
-      new HtmlWebpackPlugin({
-         template: './contactus-techgnosis-webflow/index.html'
-      })
-   ]
-}
+};
+
