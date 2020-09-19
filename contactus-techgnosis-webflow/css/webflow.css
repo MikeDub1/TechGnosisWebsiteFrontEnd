@@ -1815,4 +1815,7 @@ textarea.w-select {
   align-items: center;
   justify-content: center;
 }
+#navPrevButton{
+  background-color: royalblue;
+}
 
