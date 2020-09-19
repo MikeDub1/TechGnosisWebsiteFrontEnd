@@ -1,7 +1,22 @@
 import React, {Component} from 'react';
+import ThreadSampleWhatsHot from './ThreadSampleWhatshot.js'
 
 
 class WhatsHotBlock extends React.Component{
+
+    constructor(){
+        super();
+
+        this.state = {
+            threadSamples: []
+        };
+    }
+    handleThreadSampleListChange = (newThread) =>
+    {
+        console.log("changing state...");
+        this.state.threadSamples.concat([newThread]);
+    }
+
     render()
     {
         return (
@@ -10,13 +25,7 @@ class WhatsHotBlock extends React.Component{
                 <div className="div-block-7">
                     <h2 className="heading-15">Whats hot in community {this.props.community}?</h2>
                 </div>
-                <div className="threadcontainer">
-                    <img src="images/Icon-2.svg" loading="lazy" alt="" className="image-5"/>
-                    <div className="threadsampleheadings">
-                        <h5>{this.props.threadTitle}</h5>
-                        <h5>{this.props.threadPreview}</h5>
-                    </div>
-                </div>
+                {this.state.threadSamples.map(t => <ThreadSampleWhatsHot threadTitle={t.title} threadPreview={t.preview} />)}
             </div>
         </React.StrictMode>);
     }

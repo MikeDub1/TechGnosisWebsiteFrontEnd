@@ -4,14 +4,26 @@ import WhatsHotBlock from './WhatsHotBlock.js'
 ;
 function renderShit(threads)
 {
-    let reactContainer = document.createElement("div");
-    let parentContainer = document.getElementById("content");
-    if(!parentContainer) return;
+    
+    let communities = ['Gamers', 'Gardening', 'Cooking'];
+    let content = document.getElementById("content");
 
-    for(let i = 0; i < threads.length; i++)
+    for(let i = 0; i < communities.length; i++)
     {
-        ReactDOM.render(<WhatsHotBlock community={threads[i].community} threadTitle = {threads[i].title} threadPreview = {threads[i].preview}/>, reactContainer);
-        parentContainer.appendChild(reactContainer);
+        let reactContainer = document.createElement("div");
+        ReactDOM.render(<WhatsHotBlock community = {communities[i]} ref={(block) => {window.block = block}}/>, reactContainer);
+
+        for(let j = 0; j < threads.length; j++)
+        {
+            
+            if(threads[j].community == communities[i])
+            {
+                console.log("I AM IN!!");
+                window.block.handleThreadSampleListChange(threads[j]);
+            }
+                
+        }
+
     }
     
 }
@@ -20,19 +32,19 @@ let threadSampleObject1 =
 {
     title: "Sometitle",
     preview: "SomePreview",
-    community: "GAMERZZZ"
+    community: "Gamers"
 };
 let threadSampleObject2 =
 {
     title: "Sometitle",
     preview: "SomePreview",
-    community: "GAMERZZZ"
+    community: "Gardening"
 };
 let threadSampleObject3 =
 {
     title: "Sometitle",
     preview: "SomePreview",
-    community: "GAMERZZZ"
+    community: "Cooking"
 };
 
 let threads = [threadSampleObject1, threadSampleObject2, threadSampleObject3];
