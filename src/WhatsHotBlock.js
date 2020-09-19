@@ -14,7 +14,9 @@ class WhatsHotBlock extends React.Component{
     handleThreadSampleListChange = (newThread) =>
     {
         console.log("changing state...");
-        this.state.threadSamples.concat([newThread]);
+        this.setState({
+            threadSamples: this.state.threadSamples.concat([newThread])
+        })
     }
 
     render()

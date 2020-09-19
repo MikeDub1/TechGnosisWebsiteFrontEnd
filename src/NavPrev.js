@@ -9,6 +9,8 @@ class NavPrev extends React.Component
             style: {backgroundImage: 'url(contactus-techgnosis-webflow/images/portfolio-1---wide.svg)'},
             h1: "BlahBlahBlah",
             h2: "BlahBlah",
+            href: "contactus-techgnosis-webflow/work/project1.html",
+            buttonText: "Join the revolution!!!"
         }
     }
 
@@ -19,7 +21,9 @@ class NavPrev extends React.Component
             this.setState({
                 style : {backgroundImage: 'url(contactus-techgnosis-webflow/images/portfolio-1---wide.svg)'},
                 h1 : "BlahBlahBlah",
-                h2 : "BlahBlah"
+                h2 : "BlahBlah",
+                href: "contactus-techgnosis-webflow/work/project1.html",
+                buttonText: "Join the revolution!!!"
             });    
         }
 
@@ -28,7 +32,8 @@ class NavPrev extends React.Component
             this.setState({
                 style : {backgroundImage: 'url(contactus-techgnosis-webflow/images/portfolio-2---wide.svg)'},
                 h1:"This is my 2nd button",
-                h2 : "Service information goes here!"
+                h2: "Service information goes here!",
+                href: 
             });
         }
 
@@ -64,6 +69,7 @@ class NavPrev extends React.Component
                 <div id="inner_react" style={this.state.style}>
                     <h1>{this.state.h1}</h1>
                     <h2>{this.state.h2}</h2>
+                    <a href={this.state.href}>{this.state.buttonText}</a>
                 </div>
             </>
         );

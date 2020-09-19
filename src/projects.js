@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-import WhatsHotBlock from './WhatsHotBlock.js'
-;
+import ReactDOM from 'react-dom';
+import WhatsHotBlock from './WhatsHotBlock.js';
 function renderShit(threads)
 {
     
@@ -23,6 +22,7 @@ function renderShit(threads)
             }
                 
         }
+        content.appendChild(reactContainer);
 
     }
     
@@ -46,7 +46,13 @@ let threadSampleObject3 =
     preview: "SomePreview",
     community: "Cooking"
 };
+let threadSampleObject4 =
+{
+    title: "Whatup mama!",
+    preview:"Today, is my mommy's bday. I wish her the best of luck during this shitty year!",
+    community: "Gardening"
+}
 
-let threads = [threadSampleObject1, threadSampleObject2, threadSampleObject3];
+let threads = [threadSampleObject1, threadSampleObject2, threadSampleObject3, threadSampleObject4];
 
 renderShit(threads);
