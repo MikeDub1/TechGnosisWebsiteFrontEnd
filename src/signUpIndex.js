@@ -46,5 +46,5 @@ function handleClick(e) {
         document.getElementById("reactContainerForm"));
 } 
 
-submitFormButton.addEventListener('click', handleClick);
+submitFormButton.addEventListener('click', handleClick); 
 
