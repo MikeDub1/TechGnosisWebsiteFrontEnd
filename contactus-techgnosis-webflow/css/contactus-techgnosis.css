@@ -1155,9 +1155,11 @@ figcaption {
   background-color: #1a1b1f;
 }
 
+
 ._404-content-wrap {
   margin-bottom: 20px;
 }
+
 
 .home-content-wrap {
   margin-top: 80px;
@@ -1548,20 +1550,28 @@ figcaption {
   align-self: center;
 }
 
-.outerformblock {
-  display: block;
-  width: 50%;
+#reactContainerForm{
+  display: flex;
+  width: 60%;
   height: 50%;
   margin-bottom: 115px;
+  align-items:center;
+  justify-content: center;
+}
+
+.outerformblock {
+  display: block;
+  width: 100%;
+  height: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
-  flex-direction: row;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
-  align-self: center;
+  flex-direction: row;
+  
 }
 
 .outerformblock.invisible {
@@ -1590,6 +1600,8 @@ figcaption {
   width: 100%;
   margin-bottom: 23px;
   padding-bottom: 0px;
+  align-items:center;
+  justify-content:center;
 }
 
 .div-block-11 {
@@ -2823,7 +2835,9 @@ figcaption {
     width: 100px;
   }
   .formlabel {
-    width: 100px;
+    width: 185px;
+    height: 20px;
+    float: left;
   }
   .outerformblock {
     width: 70%;
