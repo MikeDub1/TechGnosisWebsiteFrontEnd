@@ -52,29 +52,32 @@ function handleClick(e) {
 
 function validateName(firstName, lastName)
 {
-    let pattern1 = /[A-Z][a-z]+/;
-
+    let pattern1 = /^(([A-Z][a-z]+)\-?)+$/;
+    let form_div = firstName.parentElement;
+    let error;
     if (!firstName.value.match(pattern1))
     {
-        let form_div = firstName.parentElement;
-        let error  = document.createElement("h4");
-        
-        error.textContent = "This value can't be empty!";
-        error.style.color = "red";
+        if(error == undefined)
+        {
+            error = document.createElement("h6");
+            error.textContent = "Please no more and no less than one word in this field!\nIf needed, place a hyphen in between names.";
+            error.style.color = "red";
 
-        form_div.appendChild(error);
+            form_div.appendChild(error);
+        }
+        
         return false;
     }
 
     if (!lastName.value.match(pattern1))
     {
-        let form_div = firstName.parentElement;
-        let error  = document.createElement("h4");
-        
+        error = document.createElement("h6");
         error.textContent = "This value can't be empty!";
         error.style.color = "red";
 
         form_div.appendChild(error);
+        
+        
         return false;
     }
     return true;
@@ -82,13 +85,16 @@ function validateName(firstName, lastName)
 
 function validateEmail(email)
 {
-    let pattern = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi
+    let pattern = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi;
+    let form_div = email.parentElement;
+    let error  = document.createElement("h6");
     if(!email.value.match(pattern))
     {
-        let form_div = email.parentElement;
-        let error  = document.createElement("h4");
-        
-        error.textContent = "This is not a valid email address!";
+        if(error == undefined)
+        {
+            error = document.createElement("h6");
+            error.textContent = "This is not a valid email address!";
+        }
         error.style.color = "red";
 
         form_div.appendChild(error);
@@ -109,9 +115,9 @@ function isLeapYear(year)
         }
         return true;
     }
-
     return false;
 }
+
 function validateDOB(dateOfBirth)
 {
     let month = parseInt(dateOfBirth.value.slice(0,2));
@@ -119,13 +125,14 @@ function validateDOB(dateOfBirth)
     let year = parseInt(dateOfBirth.value.slice(6,8));
 
     let form_div = email.parentElement;
-    let error  = document.createElement("h4");
+    let error  = document.createElement("h6");
         
 
     let pattern = /^[0-9]{2}\/[0-9]{2}\/2[0-9]{3}$/
     if(!dateOfBirth.value.match())
     {
-        error.textContent = "This is not a valid date format!";
+        if(error.textContent == "")
+            error.textContent = "This is not a valid date format!";
         error.style.color = "red";
 
         form_div.appendChild(error);
@@ -135,7 +142,8 @@ function validateDOB(dateOfBirth)
     else if(month == 2)
     {
         if(day == 29 && !isLeapYear(year)){  
-            error.textContent = "This the year entered is not a leap year!";
+            if(error.textContent == "")
+                error.textContent = "This the year entered is not a leap year!";
             error.style.color = "red";
 
             form_div.appendChild(error);
@@ -143,7 +151,8 @@ function validateDOB(dateOfBirth)
         }
         else if(day > 29)
         {
-            error.textContent = "The day entered is not valid!";
+            if(error.textContent == "")
+                error.textContent = "The day entered is not valid!";
             error.style.color = "red";
 
             form_div.appendChild(error);
@@ -153,7 +162,8 @@ function validateDOB(dateOfBirth)
     else if( ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && day > 31) ||
     ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30))
     {
-        error.textContent = "This date is not valid";
+        if(error.textContent)
+            error.textContent = "This date is not valid";
         error.style.color = "red";
 
         form_div.appendChild(error);
