@@ -53,17 +53,19 @@ function handleClick(e) {
 function validateName(firstName, lastName)
 {
     let pattern1 = /^(([A-Z][a-z]+)\-?)+$/;
-    let form_div = firstName.parentElement;
+    let form_div_fname = firstName.parentElement;
+    let form_div_lname = lname.parentElement;
     let error;
     if (!firstName.value.match(pattern1))
     {
-        if(error == undefined)
+        if(!document.getElementById("error"))
         {
             error = document.createElement("h6");
+            error.id="error"
             error.textContent = "Please no more and no less than one word in this field!\nIf needed, place a hyphen in between names.";
             error.style.color = "red";
 
-            form_div.appendChild(error);
+            form_div_fname.appendChild(error);
         }
         
         return false;
@@ -71,13 +73,15 @@ function validateName(firstName, lastName)
 
     if (!lastName.value.match(pattern1))
     {
-        error = document.createElement("h6");
-        error.textContent = "This value can't be empty!";
-        error.style.color = "red";
+        if(!document.getElementById("errorLname"))
+        {
+            error = document.createElement("h6");
+            error.id = "errorLname";
+            error.textContent = "This value can't be empty!";
+            error.style.color = "red";
 
-        form_div.appendChild(error);
-        
-        
+            form_div_lname.appendChild(error);
+        }
         return false;
     }
     return true;
@@ -90,9 +94,10 @@ function validateEmail(email)
     let error  = document.createElement("h6");
     if(!email.value.match(pattern))
     {
-        if(error == undefined)
+        if(!document.getElementById("errorEmail"))
         {
             error = document.createElement("h6");
+            error.id = "errorEmail";
             error.textContent = "This is not a valid email address!";
         }
         error.style.color = "red";
@@ -124,50 +129,59 @@ function validateDOB(dateOfBirth)
     let day = parseInt(dateOfBirth.value.slice(3,5));
     let year = parseInt(dateOfBirth.value.slice(6,8));
 
-    let form_div = email.parentElement;
+    let form_div = dateOfBirth.parentElement;
     let error  = document.createElement("h6");
         
 
-    let pattern = /^[0-9]{2}\/[0-9]{2}\/2[0-9]{3}$/
-    if(!dateOfBirth.value.match())
+    let pattern = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/
+    if(!dateOfBirth.value.match(pattern))
     {
-        if(error.textContent == "")
+        if(!document.getElementById("errorDOB"))
+        {
             error.textContent = "This is not a valid date format!";
-        error.style.color = "red";
-
-        form_div.appendChild(error);
+            error.style.fontSize = "0.75rem";
+            error.style.color = "red";
+            error.id = "errorDOB";
+            form_div.appendChild(error);
+        }
+            
         return false;    
     }
 
     else if(month == 2)
     {
         if(day == 29 && !isLeapYear(year)){  
-            if(error.textContent == "")
-                error.textContent = "This the year entered is not a leap year!";
-            error.style.color = "red";
-
-            form_div.appendChild(error);
+            if(!document.getElementById("errorDOB"))
+            {
+                error.textContent = "This is not a valid date format!";
+                error.style.color = "red";;
+                error.id = "errorDOB";
+                form_div.appendChild(error);
+            }
             return false;
         }
         else if(day > 29)
         {
-            if(error.textContent == "")
-                error.textContent = "The day entered is not valid!";
-            error.style.color = "red";
-
-            form_div.appendChild(error);
+            if(!document.getElementById("errorDOB"))
+            {
+                error.textContent = "This is not a valid date format!";
+                error.style.color = "red";
+                error.id = "errorDOB";
+                form_div.appendChild(error);
+            }
             return false;
         }
     }
     else if( ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && day > 31) ||
     ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30))
     {
-        if(error.textContent)
-            error.textContent = "This date is not valid";
-        error.style.color = "red";
-
-        form_div.appendChild(error);
-        return false;
+        if(!document.getElementById("errorDOB"))
+        {
+            error.textContent = "This is not a valid date format!";
+            error.style.color = "red";
+            error.id = "errorDOB";
+            form_div.appendChild(error);
+        }
     }
     return true;
 }

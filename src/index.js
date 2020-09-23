@@ -11,15 +11,7 @@ let button5 = document.getElementById("aboutUs");
 
 ReactDOM.render(<NavPrev ref = {(ourPreview) => {window.ourPreview = ourPreview}}/>, document.getElementById("reactcontainer"));
 
-//FIXME: Make a function which accesses the state variable from ourPreview and manipulates it directly.
-// const handleClick = (e, image, header1, header2) =>
-// {
-//     window.ourPreview.setState({
-//         style: {backgroundImage: image},
-//         h1: header1,
-//         h2: header2
-//     });
-// }
+
 button.addEventListener('click', window.ourPreview.handleClick);
 button2.addEventListener('click', window.ourPreview.handleClick);
 button3.addEventListener('click', window.ourPreview.handleClick);
