@@ -5,7 +5,8 @@ module.exports = {
    {
       home: './src/index.js',
       forum: './src/projects.js',
-      signUp: './src/signUpIndex.js'
+      signUp: './src/signUpIndex.js',
+      commmunityHome: './src/communityIndex.js'
    },
    output: {
       path: __dirname + '/bundle',
