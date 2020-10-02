@@ -1,5 +1,3 @@
-
-
 .w-layout-grid {
   display: -ms-grid;
   display: grid;
@@ -1155,11 +1153,9 @@ figcaption {
   background-color: #1a1b1f;
 }
 
-
 ._404-content-wrap {
   margin-bottom: 20px;
 }
-
 
 .home-content-wrap {
   margin-top: 80px;
@@ -1484,7 +1480,7 @@ figcaption {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 80%;
+  height: 100%;
   padding-bottom: 0px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1550,32 +1546,24 @@ figcaption {
   align-self: center;
 }
 
-#reactContainerForm{
-  display: flex;
-  width: 60%;
-  height: 50%;
-  margin-bottom: 115px;
-  align-items:center;
-  justify-content: center;
-}
-
 .outerformblock {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
+  margin-bottom: 115px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
-  flex-direction: row;
-  
+  align-self: center;
 }
 
 .outerformblock.invisible {
-  display: none;
+  display: block;
   overflow: visible;
 }
 
@@ -1600,8 +1588,6 @@ figcaption {
   width: 100%;
   margin-bottom: 23px;
   padding-bottom: 0px;
-  align-items:center;
-  justify-content:center;
 }
 
 .div-block-11 {
@@ -1806,8 +1792,7 @@ figcaption {
 .favthreadtable {
   position: absolute;
   top: 389.5px;
-  overflow-y: scroll;
-  overflow-x:hidden;
+  overflow: scroll;
   width: 40%;
   height: 40%;
   -webkit-align-self: auto;
@@ -1839,8 +1824,9 @@ figcaption {
   padding-left: 25px;
 }
 
-.div-block-21 {
+.followingthreadtitle {
   height: 50%;
+  margin-left: 30px;
 }
 
 .div-block-22 {
@@ -1860,7 +1846,7 @@ figcaption {
   background-color: #d3d3d3;
 }
 
-.followingthreadtitle {
+.heading-8 {
   margin-top: 0px;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
@@ -1879,8 +1865,6 @@ figcaption {
 
 .mainthreaddivheader {
   background-color: #d3d3d3;
-  height: 75px;
-  width: 100%;
 }
 
 .threadblock {
@@ -2388,7 +2372,10 @@ figcaption {
 }
 
 .div-block-35 {
-  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   width: 80%;
   height: 60%;
   margin-top: 70px;
@@ -2407,7 +2394,6 @@ figcaption {
   align-items: center;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   background-image: url('../images/portfolio-3---wide.svg');
   background-position: 0px 0px;
@@ -2436,7 +2422,10 @@ figcaption {
 }
 
 .div-block-36 {
-  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   width: 80%;
   height: 60%;
   margin-top: 70px;
@@ -2474,7 +2463,8 @@ figcaption {
 }
 
 .div-block-37 {
-  display: none;
+  display: block;
+  overflow: visible;
   width: 80%;
   height: 60%;
   margin-top: 70px;
@@ -2494,6 +2484,7 @@ figcaption {
   background-image: url('../images/portfolio-1---wide.svg');
   background-position: 0px 0px;
   background-size: auto;
+  background-clip: border-box;
 }
 
 .div-block-37:focus {
@@ -2517,13 +2508,118 @@ figcaption {
   margin-bottom: 0px;
 }
 
-#reactcontainer {
+.reactcontainer {
   width: 80%;
   height: 60%;
   margin-top: 70px;
-  display:flex;
-  align-items:center;
+}
+
+.div-block-38 {
+  height: 100%;
+}
+
+.div-block-39 {
+  height: 50%;
+}
+
+.body-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  padding-bottom: 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.signinform {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+  height: 50%;
+  padding-bottom: 0px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  background-color: #d3d3d3;
+  box-shadow: 4px 4px 8px 3px grey;
+}
+
+.form-4 {
+  width: 100%;
+}
+
+.form-block-2 {
+  display: block;
+  margin-top: 41px;
+}
+
+.field-label-3 {
+  padding-left: 20px;
+}
+
+.text-field-8 {
+  width: 90%;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.field-label-4 {
+  padding-left: 20px;
+}
+
+.text-field-9 {
+  width: 90%;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.submit-button-3 {
+  margin-left: 0px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+.container-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.image-6 {
+  padding-bottom: 69px;
 }
 
 @media screen and (max-width: 991px) {
@@ -2725,6 +2821,9 @@ figcaption {
   .outerformblock {
     width: 100%;
   }
+  .signinform {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -2838,9 +2937,7 @@ figcaption {
     width: 100px;
   }
   .formlabel {
-    width: 185px;
-    height: 20px;
-    float: left;
+    width: 100px;
   }
   .outerformblock {
     width: 70%;
@@ -2953,6 +3050,9 @@ figcaption {
   .threadp-copy.trans {
     margin-right: 0px;
     margin-left: 0px;
+  }
+  .signinform {
+    width: 80%;
   }
 }
 

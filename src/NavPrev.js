@@ -9,7 +9,7 @@ class NavPrev extends React.Component
             style: {backgroundImage: 'url(contactus-techgnosis-webflow/images/portfolio-1---wide.svg)'},
             h1: "BlahBlahBlah",
             h2: "BlahBlah",
-            href: "contactus-techgnosis-webflow/work/project-1.html",
+            href: "contactus-techgnosis-webflow/work/signUp.html",
             buttonText: "Join the revolution!!!"
         }
     }
@@ -22,7 +22,7 @@ class NavPrev extends React.Component
                 style : {backgroundImage: 'url(contactus-techgnosis-webflow/images/portfolio-1---wide.svg)'},
                 h1 : "BlahBlahBlah",
                 h2 : "BlahBlah",
-                href: "contactus-techgnosis-webflow/work/project-1.html",
+                href: "contactus-techgnosis-webflow/work/signUp.html",
                 buttonText: "Join the revolution!!!"
             });    
         }
