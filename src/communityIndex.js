@@ -5,12 +5,17 @@ import CommunityContent from './CommunityContent.js'
 
 
 let followingThread1 = {
-    favicon: "url(icon-1_1)",
+    favicon: "../images/Icon-1_1.svg",
     name: "A sample thread",
     author: "John Appleseed"
 }
+let normalThread1 = {
+    favicon: "../images/Icon-2.svg",
+    name: "Another sample thread",
+    author: "John Doe"
+}
 let followingThreads = [followingThread1]
-let normalThreads = [followingThread1]
+let normalThreads = [followingThread1, normalThread1]
 
 ReactDOM.render(<CommunityContent header="Sample Heading"
                 backgroundImageHeader="url(/home/mike/TechGnosisProjects/TechGnosisWebsite/contactus-techgnosis-webflow/images/portfolio-1---wide.svg)"
