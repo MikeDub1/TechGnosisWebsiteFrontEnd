@@ -6,7 +6,8 @@ module.exports = {
       home: './src/index.js',
       forum: './src/projects.js',
       signUp: './src/signUpIndex.js',
-      commmunityHome: './src/communityIndex.js'
+      commmunityHome: './src/communityIndex.js',
+      signIn: './src/signIn.js'
    },
    output: {
       path: __dirname + '/bundle',
@@ -23,8 +24,10 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel-loader',
             query: {
-               presets: ['@babel/preset-env', '@babel/preset-react']
-            }
+               presets: ['@babel/preset-env', '@babel/preset-react'],
+               plugins : ['@babel/transform-runtime']
+            },
+            
          }
       ]
    },
