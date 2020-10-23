@@ -15,30 +15,51 @@ ReactDOM.render((
             <label className="formlabel">Last Name:</label>
             <label className="emptylabel"></label>
             <div id="input2">
-                <input id="lname" type="text" className="normalinput w-input" maxlength="256" name="field-4" data-name="Field 4" placeholder="Example Text" required=""/>
+                <input id="lname" type="text" className="normalinput w-input" maxlength="256" name="field-4" data-name="Field 4" placeholder="Last name here..." required=""/>
             </div>
             
         </div>
+
+        <div className="form_div2">
+            <label htmlFor="username" className="formlabel">Desired Username:</label>
+            <label className="emptylabel"></label>
+            <div id="input2">
+                <input id="uname" type="text" className="normalinput w-input" maxlength="256" name="username" data-name="Field 4" placeholder="Username here..." required=""/>
+            </div>
+            
+        </div>
+
+        
+
         <div className="form_div2">
             <label htmlFor="email" className="formlabel">Email Address:</label>
             <label htmlFor="name-2" className="emptylabel"></label>
             <div id="input3">
-                <input id="email" type="email" className="normalinput w-input" maxlength="256" name="email" data-name="Email" placeholder="" required=""/>
+                <input id="email" type="email" className="normalinput w-input" maxlength="256" name="email" data-name="Email" placeholder="Email here..." required=""/>
             </div>
             
         </div>
+
+        <div className="form_div2">
+            <label htmlFor="password" className="formlabel">Password:</label>
+            <label htmlFor="name-2" className="emptylabel"></label>
+            <div id="input4">
+                <input id="password" type="text" className="normalinput w-input" maxlength="256" name="password" data-name="Field 4" placeholder="Password..." required=""/>
+            </div>
+        </div>
+
         <div className="form_div2">
             <label className="formlabel">Date of birth: </label>
             <label className="emptylabel"></label>
             <div id="input4">
-                <input id="DOB" type="text" className="normalinput w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="Example Text" required=""/>
+                <input id="DOB" type="text" className="normalinput w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="Date of Birth: MM/DD/YYYY" required=""/>
             </div>
             
         </div>
         <div className="form_div2">
             <label className="formlabel">Country of residence: </label>
             <label className="emptylabel"></label>
-            <select id="field-3" name="field-3" className="normalinput w-select">
+            <select id="COR" name="field-3" className="normalinput w-select">
                 <option value="">Select one...</option><option value="First">First Choice</option>
                 <option value="Second">Second Choice</option>
                 <option value="Third">Third Choice</option>
@@ -52,11 +73,32 @@ ReactDOM.render((
 
 let submitFormButton = document.getElementById("submitB");
 
-function handleClick(e) {
+async function handleClick(e) {
 
     if(validateForm()){
+
+        let message = "Your submission has been recieved! Please check your email for a comfirmation message!";
+
+        let firstName = document.getElementById("fname").value;
+        let lastName = document.getElementById("lname").value;
+        let email = document.getElementById("email").value;
+        let desiredUsername = document.getElementById("uname").value;
+        let dateOfBirth = document.getElementById("DOB").value;
+        let countryOfResidence = document.getElementById("COR").value;
+        let password = document.getElementById("password").value;
+
+        let response = await fetch(`http://127.0.0.1:5000/api/signUp?fname=${firstName}&lname=${lastName}&password=${password}&email=${email}&uname=${desiredUsername}&dateOfBirth=${dateOfBirth}&countryOfResidence=${countryOfResidence}`
+                        ,{
+                            method: 'POST'
+                        });
+        
+        if(response.status != 200)
+        {
+            message = "An internal error has occured and we are currently looking into a solution."
+        }
+
         ReactDOM.render(
-            <h1>Your submission has been recieved! Please check your email for a comfirmation message!</h1>,
+            <h1>{message}</h1>,
             document.getElementById("reactContainerForm"));
     }
 } 

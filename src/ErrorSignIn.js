@@ -5,19 +5,15 @@ class ErrorMessage extends Component{
         message : 'Either the username or the password is incorrect.'
     }
 
-    handleErrorMessageChange = (errorCode) => {
+    handleErrorMessageChange = (response_object) => {
         console.log("changing message...")
-        console.log(errorCode);
-        if(errorCode == 404){
+        console.log(response_object.status_code);
+        
+        if(response_object.status_code != 200)
+        {
             this.setState({
-                message : '404: Either the username or the password is incorrect.'
-            });
-        }
-
-        if(errorCode == 500){
-            this.setState({
-                message : '500: Internal server error! There is a bug in the server and we are looking into it. Please check back later.'
-            });
+                message : response_object.message
+            })
         }
     }
 
